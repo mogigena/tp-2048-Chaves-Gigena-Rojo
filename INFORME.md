@@ -1,6 +1,6 @@
 # Informe: agentes para el 2048 simplificado
 
-Integrantes: [completar]
+Integrantes: [Chaves, Maximiliano - Gigena, Ofelia - Rojo, Guillermo]
 
 ## 1. Comparación
 
