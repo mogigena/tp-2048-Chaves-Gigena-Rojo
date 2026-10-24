@@ -69,7 +69,20 @@ class MinimaxAgent(Agent):
         #   - otherwise, the maximum over the legal actions of
         #         reward + self.chance_value(afterstate, depth)
         #     where (afterstate, reward) = self.problem.apply_action(state, action)
-        raise NotImplementedError("Parte 1: implementar MinimaxAgent.max_value")
+        if self.problem.is_terminal(state):
+            return 0.0
+        if depth == 0:
+            return self.problem.heuristic(state)
+        valueMax = float("-inf")
+        for action in self.problem.get_actions(state):
+            afterstate, reward = self.problem.apply_action(state, action)
+            value = reward + self.chance_value(afterstate, depth) ## - 1)
+            if value > valueMax:
+                valueMax= value
+        return valueMax    
+
+
+       # raise NotImplementedError("Parte 1: implementar MinimaxAgent.max_value")
 
     def chance_value(self, afterstate: GameState, depth: int) -> float:
         """
@@ -83,5 +96,7 @@ class MinimaxAgent(Agent):
         # TODO (Parte 1): implement the MIN node.
         #   The minimum, over all the outcomes in self.problem.get_chance_outcomes(afterstate),
         #   of self.max_value(next_state, depth - 1). Minimax ignores the probabilities.
-        raise NotImplementedError("Parte 1: implementar MinimaxAgent.chance_value")
+        outcomes = self.problem.get_chance_outcomes(afterstate)
+        return min(self.max_value(next_state, depth - 1) for next_state, _ in outcomes)
+        # raise NotImplementedError("Parte 1: implementar MinimaxAgent.chance_value")
 
