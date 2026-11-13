@@ -105,8 +105,7 @@ Resultados en 3 × 3
 py evaluate_agents.py modificado con estos valores:
 DEPTHS=[1] = 1   ROW= 3 COLS=3 GANES= 200
 
-| Agente                  | Punt. media   |               Distribución de ficha máxima            | tiempo| 
-|                         |               |                                                       |       |           
+| Agente                  | Punt. media   |               Distribución de ficha máxima            | tiempo|         
 |-------------------------|---------------|-------------------------------------------------------|-------|
 | Al azar                 |      179,92   |      4: 0.5%, 8: 3.5%, 16: 31.0%, 32: 57.5%, 64: 7.5% | 0.1 s |
 | Minimax, depth 1        |      768,16   | 16: 0.5%, 32: 12.5%, 64: 48.0%, 128: 35.5%, 256: 3.5% | 3.0 s |
