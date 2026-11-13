@@ -105,13 +105,12 @@ Resultados en 3 × 3
 py evaluate_agents.py modificado con estos valores:
 DEPTHS=[1] = 1   ROW= 3 COLS=3 GANES= 200
 
-| Agente | Punt. media   |               Distribución de ficha máxima            | tiempo| 
-|        |               |                                                       |       |           
-|--------|---------------|-------------------------------------------------------|-------|
-| Al azar|      179,92   |      4: 0.5%, 8: 3.5%, 16: 31.0%, 32: 57.5%, 64: 7.5% | 0.1 s |
-| Minimax, profundidad 1 |      768,16   | 16: 0.5%, 32: 12.5%, 64: 48.0%, 128: 35.5%, 256: 3.5% | 3.0 s |
-| Q-learning, 30 000 episodios 
-|        |      206,02   |              8: 4.0%, 16: 31.0%, 32: 54.0%, 64: 11.0% | 16.4s |
+| Agente                  | Punt. media   |               Distribución de ficha máxima            | tiempo| 
+|                         |               |                                                       |       |           
+|-------------------------|---------------|-------------------------------------------------------|-------|
+| Al azar                 |      179,92   |      4: 0.5%, 8: 3.5%, 16: 31.0%, 32: 57.5%, 64: 7.5% | 0.1 s |
+| Minimax, depth 1        |      768,16   | 16: 0.5%, 32: 12.5%, 64: 48.0%, 128: 35.5%, 256: 3.5% | 3.0 s |
+| Q-learning, 30000 eps   |      206,02   |              8: 4.0%, 16: 31.0%, 32: 54.0%, 64: 11.0% | 16.4s |
 
 Minimax supera ampliamente a los otros agentes en esta prueba, la heurística es mejor para tableros 
 que tienen muchas fichas, alcanza una puntuación media de 768.16 y la mayor ficha es 256 en 3.5% de las 
