@@ -30,15 +30,18 @@ hacer. Veamos un ejemplo: supongamos el siguiente tablero inicial
 tablero:
 
 | . 4 | se puede mover a izquierda o arriba
+
 | 2 8 | si movemos a la izquierda el tablero queda
 
 | 4 . | Si aparece el 2 (90% probabilidad) el tablero se bloquea y el valor
+
 | 2 8 | futuro es cero. Si aparece el 4 (10% probabilidad) se podría combinar
         los dos 4 el valor futuro sería 0,90 x 0 + 0,10 x 18 = 1,8
 
 Si partiendo el tablero original movemos hacia arriba obtenemos:
 
 | 2 4 | Si aparece el 2 (90% probabilidad) el tablero se pueden combinar los 2
+
 | . 8 | y la función heurística asigna un valor de 16. Si aparece el 4 (10% 
        probabilidad) el juego termina y el valor futuro es cero, El valor 
        esperado es: 0.90 x 16 + 0.10 x 0 = 14.4 
