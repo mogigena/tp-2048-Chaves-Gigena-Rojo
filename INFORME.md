@@ -38,8 +38,10 @@ tablero:
 | 2 8 | futuro es cero. Si aparece el 4 (10% probabilidad) se podría combinar
         los dos 4 el valor futuro sería 0,90 x 0 + 0,10 x 18 = 1,8
 ```
-Si partiendo el tablero original movemos hacia arriba obtenemos:
+
 ```
+Si partiendo el tablero original movemos hacia arriba obtenemos:
+
 | 2 4 | Si aparece el 2 (90% probabilidad) el tablero se pueden combinar los 2
 
 | . 8 | y la función heurística asigna un valor de 16. Si aparece el 4 (10% 
