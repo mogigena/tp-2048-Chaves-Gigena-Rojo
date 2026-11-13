@@ -9,9 +9,9 @@ from algorithms import QLearningAgent
 from core import evaluate_agent
 
 # Configuration
-ROWS, COLS = 2, 2
+ROWS, COLS = 3, 3 #2, 2
 ALPHA, GAMMA, EPSILON = 0.1, 1.0, 0.1
-SEED = 42
+SEED = 7
 CHECKPOINTS = [100, 300, 1_000, 3_000, 10_000, 30_000]
 EVALUATION_GAMES = 2000
 

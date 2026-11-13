@@ -63,7 +63,15 @@ class QLearningAgent(Agent):
         # TODO (Parte 2): implement the epsilon-greedy policy.
         #   Use self.rng for every random choice (self.rng.random(), self.rng.choice(...)),
         #   so that results are reproducible.
-        raise NotImplementedError("Parte 2: implementar QLearningAgent.epsilon_greedy_action")
+
+        actions = self.problem.get_actions(state)
+        if not actions:
+            raise ValueError("No hay acciones legales en un estado terminal")
+        if self.rng.random() < self.epsilon:
+            return self.rng.choice(actions)
+        return self.best_action(state)
+
+        #raise NotImplementedError("Parte 2: implementar QLearningAgent.epsilon_greedy_action")
 
     def update(self, state: GameState, action: str, reward: float,
                next_state: GameState, done: bool) -> None:
@@ -83,7 +91,20 @@ class QLearningAgent(Agent):
         #     - reward, if next_state is terminal;
         #     - reward + gamma * (maximum of Q(next_state, a') over the LEGAL actions a'
         #       of next_state), otherwise.
-        raise NotImplementedError("Parte 2: implementar QLearningAgent.update")
+     
+        current_q = self.get_q(state, action)
+        if done:
+            target = reward
+        else:
+            next_actions = self.problem.get_actions(next_state)
+            max_next_q = max(
+                (self.get_q(next_state, next_action) for next_action in next_actions),
+                default=0.0,
+            )
+            target = reward + self.gamma * max_next_q
+        self.q[(state, action)] = current_q + self.alpha * (target - current_q)
+   
+        #raise NotImplementedError("Parte 2: implementar QLearningAgent.update")
 
     def train(self, episodes: int, report_every: int = 0,
               report: Optional[Callable[[int, "QLearningAgent"], None]] = None) -> List[float]:

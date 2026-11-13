@@ -9,9 +9,9 @@ from algorithms import RandomAgent, MinimaxAgent, QLearningAgent
 from core import evaluate_agent
 
 # Configuration
-ROWS, COLS = 2, 2
-GAMES = 1000
-DEPTHS = [1, 2, 3]          # minimax is evaluated with each of these depths
+ROWS, COLS = 3, 3 #2, 2
+GAMES = 200
+DEPTHS = [1, 2]          # minimax is evaluated with each of these depths
 TRAINING_EPISODES = 30_000
 
 problem = Game2048Problem(ROWS, COLS)
