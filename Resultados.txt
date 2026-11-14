@@ -1,6 +1,6 @@
 # Informe: agentes para el 2048 simplificado
 
-Integrantes: Chaves, Rojo, Gigena
+Integrantes: Ofelia Gigena, Maximiliano Chavez, Guillermo Rojo
 
 
 >py -m unittest discover -s tests
