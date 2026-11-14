@@ -1,6 +1,6 @@
 # Informe: agentes para el 2048 simplificado
 
-Integrantes: [completar]
+Integrantes: Chaves, Rojo, Gigena
 
 
 >py -m unittest discover -s tests
